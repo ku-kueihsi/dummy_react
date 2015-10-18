@@ -25,12 +25,16 @@ http.createServer(function(req, res) {
   var validExtensions = {
     ".html": "text/html",
     ".js": "application/javascript",
+    ".map": "text/sourcemap",
     ".jsx": "text/babel",
+    ".tsx": "text/typescript",
+    ".ts": "text/typescript",
     ".css": "text/css",
     ".txt": "text/plain",
     ".jpg": "image/jpeg",
     ".gif": "image/gif",
-    ".png": "image/png"
+    ".png": "image/png",
+    ".ico": "image/ico"
   };
   var mimeType = validExtensions[ext];
 
