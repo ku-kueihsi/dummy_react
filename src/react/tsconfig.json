@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "target": "es3",
+        "noImplicitAny": false,
+        "outDir": "../../scripts",
+        "rootDir": "./",
+        "sourceMap": true
+    },
+    "filesGlob": [
+        "./*.tsx"
+    ],
+    "files": [
+        "hello_react_typescript.tsx"
+    ],
+    "exclude": []
+}

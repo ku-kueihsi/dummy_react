@@ -1,5 +1,7 @@
 node_modules/
 typings/
+scripts/
+bin/
 *.js
 *.map
 !webserver.js
