@@ -4,8 +4,11 @@
   "description": "My dummy project for react",
   "main": "main.js",
   "dependencies": {
+    "babelify": "^6.3.0",
+    "director": "^1.2.8",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "todomvc-app-css": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {
