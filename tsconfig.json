@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "target": "es3",
+        "noImplicitAny": false,
+        "outDir": "scripts",
+        "rootDir": "src",
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules",
+        "typings"
+    ]
+}
