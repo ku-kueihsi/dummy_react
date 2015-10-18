@@ -3,7 +3,7 @@
         "jsx": "react",
         "target": "es3",
         "noImplicitAny": false,
-        "outDir": "../../scripts",
+        "outDir": "../../public/scripts",
         "rootDir": "./",
         "sourceMap": true
     },

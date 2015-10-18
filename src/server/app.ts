@@ -6,7 +6,8 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-var server = app.listen(3000, function () {
+app.use(express.static('public'));
+var server = app.listen(1949, function () {
   var host = server.address().address;
   var port = server.address().port;
 

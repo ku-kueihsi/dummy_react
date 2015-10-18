@@ -1,5 +1,5 @@
-/// <reference path="../typings/react/react.d.ts" />
-/// <reference path="../typings/react-dom/react-dom.d.ts" />
+/// <reference path="../../typings/react/react.d.ts" />
+/// <reference path="../../typings/react-dom/react-dom.d.ts" />
 
 import React = __React;
 import ReactDom = __ReactDom;
