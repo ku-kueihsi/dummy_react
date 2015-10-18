@@ -4,17 +4,18 @@
 import React = __React;
 import ReactDom = __ReactDom;
 
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
-    );
+interface CommentBoxProps extends React.Props<any> {
+  name: string;
+}
+
+class CommentBox extends React.Component<CommentBoxProps, {}> {
+  output = 'Hello, world! I am ' + this.props.name + '.';
+  render() {
+    return <div className="commentBox">{this.output}</div>;
   }
-});
+};
 
 ReactDom.render(
-  <CommentBox />,
+  <CommentBox name='John'/>,
   document.getElementById('content')
 );
