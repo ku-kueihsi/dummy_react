@@ -1,39 +1,84 @@
 /// <reference path="../../typings/react/react.d.ts" />
 /// <reference path="../../typings/react-dom/react-dom.d.ts" />
+// /// <reference path="../../typings/marked/marked.d.ts" />
 
 import React = __React;
 import ReactDom = __ReactDom;
+declare var marked: any;
 
-class CommentList extends React.Component<{}, {}> {
-  render() {
-    return <div className="commentList"> Hello, world! I am a CommentList. </div>;
+module HelloReact {
+  var data: {author: string; text: string; id: number}[]= [
+    {author: "Pete Hunt", text: "This is one comment", id: 0},
+    {author: "Jordan Walke", text: "This is *another* comment", id: 1}
+  ];
+
+  class Comment extends React.Component<any, {}> {
+    key: number;
+    rawMarkup() {
+      var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+      return { __html: rawMarkup };
+    };
+
+    render() {
+      return (
+        <div className="comment">
+          <h2 className="commentAuthor">
+            {this.props.author}
+          </h2>
+          <span dangerouslySetInnerHTML={this.rawMarkup()} />
+        </div>
+      );
+    };
+  };
+
+  interface CommentListProps extends React.Props<{author: string; text: string; id: number}[]> {
+    data: {author: string; text: string; id: number}[];
   }
-};
 
-class CommentForm extends React.Component<{}, {}> {
-  render() {
-    return <div className="commentForm"> Hello, world! I am a CommentForm. </div>;
+  class CommentList extends React.Component<CommentListProps, {}> {
+    commentNodes = this.props.data.map(function (comment) {
+        return (
+          <Comment author={comment.author} key={comment.id}>
+             {comment.text}
+          </Comment>
+        );
+      });
+    render() {
+      return (
+        <div className="commentList">
+          {this.commentNodes}
+        </div>
+      );
+    }
+  };
+
+  class CommentForm extends React.Component<{}, {}> {
+    render() {
+      return <div className="commentForm"> Hello, world! I am a CommentForm. </div>;
+    }
+  };
+
+  interface CommentBoxProps extends React.Props<{author: string; text: string; id: number}[]> {
+    data: {author: string; text: string; id: number}[];
   }
-};
 
-interface CommentBoxProps extends React.Props<any> {
-  name: string;
+  export class CommentBox extends React.Component<CommentBoxProps, {}> {
+    render() {
+      return (
+        <div className="commentBox">
+          <h1>Comments</h1>
+          <CommentList data={this.props.data}/>
+          <CommentForm />
+        </div>);
+    }
+  };
+  
+  export function render(): void {
+    ReactDom.render(
+      <CommentBox data={data}/>,
+      document.getElementById('content')
+    );
+  };
 }
 
-class CommentBox extends React.Component<CommentBoxProps, {}> {
-  output = 'Hello, world! I am ' + this.props.name + '.';
-  render() {
-    return (
-      <div className="commentBox">
-        <h1>Comments</h1>
-        <CommentList />
-        <CommentForm />
-        {this.output}
-      </div>);
-  }
-};
-
-ReactDom.render(
-  <CommentBox name='John'/>,
-  document.getElementById('content')
-);
+HelloReact.render();
