@@ -10,7 +10,9 @@
     "filesGlob": [
         "./*.ts"
     ],
-    "exclude": [],
+    "exclude": [
+      "node_modules/**/*.ts"
+    ],
     "files": [
         "app.ts"
     ]

@@ -1,10 +1,8 @@
-/// <reference path="../../typings/react/react.d.ts" />
-/// <reference path="../../typings/react-dom/react-dom.d.ts" />
-// /// <reference path="../../typings/marked/marked.d.ts" />
+/// <reference path="./typings/tsd.d.ts" />
 
-import React = __React;
-import ReactDom = __ReactDom;
-declare var marked: any;
+import React = require('react');
+import ReactDom = require('react-dom');
+import marked = require('marked');
 
 module HelloReact {
   var data: {author: string; text: string; id: number}[]= [
