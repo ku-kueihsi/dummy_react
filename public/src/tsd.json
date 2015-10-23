@@ -28,6 +28,12 @@
     },
     "marked/marked.d.ts": {
       "commit": "af5b8275d1f2b92738b93fddabc461fc20c553a1"
+    },
+    "threejs/three.d.ts": {
+      "commit": "418ef25d7f814ac2544ee65726b86bf929260212"
+    },
+    "threejs/detector.d.ts": {
+      "commit": "418ef25d7f814ac2544ee65726b86bf929260212"
     }
   }
 }

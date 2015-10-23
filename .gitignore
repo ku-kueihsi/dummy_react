@@ -4,4 +4,8 @@ scripts/
 bin/
 *.js
 *.map
+server/node_modules
+server/package.json
 !webserver.js
+!public/src/webpack.config.js
+!public/src/libs/*

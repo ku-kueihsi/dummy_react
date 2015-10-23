@@ -1,7 +1,10 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './hello_react_typescript.tsx',
+  entry: [
+    './greeter.tsx',
+    './hello_react_typescript.tsx'
+  ],
   output: {
     path: __dirname + "/../scripts",
     filename: 'bundle.js'

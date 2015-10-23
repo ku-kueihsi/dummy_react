@@ -13,7 +13,9 @@
     "./*.ts"
   ],
   "files": [
-    "hello_react_typescript.tsx"
+    "greeter.tsx",
+    "hello_react_typescript.tsx",
+    "custom.d.ts"
   ],
   "exclude": [
     "node_modules/**/*.ts"
